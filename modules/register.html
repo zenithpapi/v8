@@ -1,0 +1,69 @@
+<section id="register">
+
+<div class="card login-card">
+
+<div class="login-icon">
+<span class="material-symbols-rounded">person_add</span>
+</div>
+
+<h2>Create Account</h2>
+
+<p class="subtitle">
+Register your Zenith account.
+</p>
+
+
+<div class="input-group">
+<span class="material-symbols-rounded">person</span>
+<input id="fullname" type="text" placeholder="Full Name">
+</div>
+
+
+<div class="input-group">
+<span class="material-symbols-rounded">phone</span>
+<input id="phone" type="text" placeholder="Phone Number">
+</div>
+
+
+<div class="input-group password-group">
+<span class="material-symbols-rounded">lock</span>
+<input id="reg_password" type="password" placeholder="Password">
+<button type="button" class="password-toggle" aria-label="Show password" onclick="togglePassword('reg_password')">
+<span id="regPasswordToggleIcon" class="material-symbols-rounded">visibility</span>
+</button>
+</div>
+
+
+<div class="input-group password-group">
+<span class="material-symbols-rounded">lock_reset</span>
+<input id="confirm_password" type="password" placeholder="Confirm Password">
+<button type="button" class="password-toggle" aria-label="Show password" onclick="togglePassword('confirm_password')">
+<span id="confirmPasswordToggleIcon" class="material-symbols-rounded">visibility</span>
+</button>
+</div>
+
+
+<div class="input-group">
+<span class="material-symbols-rounded">groups</span>
+<input id="sponsor" type="text" placeholder="Sponsor Referral Code (Optional)">
+</div>
+
+
+<button class="btn" onclick="registerUser()">
+CREATE ACCOUNT
+</button>
+
+
+<div class="divider">
+OR
+</div>
+
+
+<button class="btn btn-outline" onclick="openPage('login')">
+BACK TO LOGIN
+</button>
+
+
+</div>
+
+</section>

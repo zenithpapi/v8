@@ -1,0 +1,63 @@
+<section id="signin">
+
+<div class="card login-card">
+
+<form action="login.php" method="post" onsubmit="event.preventDefault(); login();">
+
+<!-- Loading overlay shown while servers.json loads -->
+<div id="loginLoading" class="loading-overlay" aria-hidden="true" style="display:none">
+  <div class="spinner" aria-hidden="true"></div>
+</div>
+
+<div class="login-icon">
+<span class="material-symbols-rounded">account_circle</span>
+</div>
+
+<h2>Welcome Back</h2>
+
+<p class="subtitle">
+Sign in to access your Zenith account.
+</p>
+
+
+<div class="input-group">
+<span class="material-symbols-rounded">person</span>
+<input id="username" name="username" type="text" placeholder="Full name">
+</div>
+
+
+<div class="input-group password-group">
+<span class="material-symbols-rounded">lock</span>
+<input id="password" name="password" type="password" placeholder="Password">
+<button type="button" class="password-toggle" aria-label="Show password" onclick="togglePassword()">
+<span id="passwordToggleIcon" class="material-symbols-rounded">visibility</span>
+</button>
+</div>
+<div class="row remember">
+
+<a href="#">
+Forgot Password?
+</a>
+
+</div>
+
+
+<button class="btn" type="submit">
+SIGN IN
+</button>
+
+
+<div class="divider">
+OR
+</div>
+
+
+<button class="btn btn-outline" type="button" onclick="openPage('register')">
+CREATE ACCOUNT
+</button>
+
+</form>
+
+</div>
+
+</section>

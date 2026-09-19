@@ -1,0 +1,103 @@
+﻿<section id="home" class="home-shell">
+
+  <!-- Header / Welcome -->
+  <header class="header home-header">
+    <div>
+      <div class="logo"><img src="assets/images/zenith-mark.svg" alt="Zenith logo" class="brand-logo"><div class="brand-text">ZENITH</div></div>
+      <div class="subtitle"> AI Intelligence Platform </div>
+      <div class="subtitle welcome-line" id="welcomeName">Loading your dashboard...</div>
+    </div>
+    <div class="profile"> <span class="material-symbols-rounded" id="profileInitial">P</span> </div>
+  </header>
+
+  <!-- Compact Hero -->
+  <div class="card portfolio home-hero app-hero">
+    <div class="home-hero-content">
+      <div>
+        <div class="label"> Total Portfolio </div>
+        <div class="balance" id="portfolioAmount">₱0.00</div>
+      </div>
+      <div>
+        <div class="home-status-pill" id="homeStatusBadge">INACTIVE</div>
+      </div>
+    </div>
+    <div class="home-hero-footer">
+      <div class="gain" id="portfolioGain">
+        <span class="material-symbols-rounded"> trending_up </span> Loading gain...
+      </div>
+      <div class="home-hero-caption">Trade balance and today's trade synced to your account</div>
+    </div>
+  </div>
+
+  <!-- AI Engine teaser -->
+  <div class="card ai-engine-card lockin-engine-card" id="primeAutonomousLockinEngineCard" role="button" tabindex="0" aria-label="Open Lockin Engine" onclick="openPage('lockin', this)" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openPage('lockin', this); }">
+    <div class="ai-header lockin-header">
+      <div class="lockin-header-main">
+        <h3>
+          <span class="material-symbols-rounded"> lock </span> Lockin Engine
+        </h3>
+        <div class="subtitle" id="lockinModeText">Lock-in Mode Active</div>
+      </div>
+      <div class="home-status-pill" id="lockinStatusBadge">0 ACTIVE</div>
+    </div>
+    <div class="lockin-grid">
+      <div class="lockin-column">
+        <div class="lockin-name">NEXUS</div>
+        <div class="lockin-meta">20% For 10 Days</div>
+      </div>
+      <div class="lockin-column">
+        <div class="lockin-name">ACCELERATOR</div>
+        <div class="lockin-meta">30% For 15 Days</div>
+      </div>
+      <div class="lockin-column">
+        <div class="lockin-name">INFINITY</div>
+        <div class="lockin-meta">40% For 20 Days</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card ai-engine-card" id="zenithAiEngineCard" role="button" tabindex="0" aria-label="Open Zenith AI Engine">
+    <div class="ai-header">
+      <div>
+        <h3>
+          <span class="material-symbols-rounded"> auto_awesome </span> Zenith AI Engine
+        </h3>
+        <div class="subtitle" id="homeModeText">Zenith Mode Inactive</div>
+      </div>
+      <div class="ai-status" id="homeEngineStatusBadge">INACTIVE</div>
+    </div>
+    <div class="progress">
+      <div></div>
+    </div>
+    <div class="home-card-caption">Tap to open the live AI engine dashboard</div>
+    <div class="subtitle" id="planInfo">AI Confidence 96%</div>
+  </div>
+
+  <div class="card primary-actions-card">
+      <div class="home-section-header">
+       <div>
+        <h3>Quick Access</h3>
+        <div class="subtitle">Jump into the tools you use most</div>
+       </div>
+      </div>
+      <div class="primary-actions">
+       <button class="primary-action" onclick="openPage('trade', this)">
+        <span class="material-symbols-rounded">rocket_launch</span>
+        <div>Activate</div>
+       </button>
+       <button class="primary-action" onclick="openPage('wallet', this)">
+        <span class="material-symbols-rounded">payments</span>
+        <div>Withdraw</div>
+       </button>
+       <button class="primary-action" onclick="openPage('ai', this)">
+        <span class="material-symbols-rounded">psychology</span>
+        <div>Trend</div>
+       </button>
+       <button class="primary-action" onclick="openPage('team', this)">
+        <span class="material-symbols-rounded">share</span>
+        <div>Referral</div>
+       </button>
+      </div>
+     </div>
+
+</section>

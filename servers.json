@@ -1,0 +1,28 @@
+{
+  "servers": [
+    {
+      "url": "https://papi-ver2.online/rev8/api/",
+      "priority": 1
+    },
+    {
+      "url": "https://saddlebrown-gnu-658159.hostingersite.com/rev8/api/",
+      "priority": 2
+    },
+    {
+      "url": "https://midnightblue-herring-134619.hostingersite.com/rev8/api/",
+      "priority": 3
+    },
+	 {
+      "url": "https://orangered-grouse-134812.hostingersite.com/rev8/api/",
+      "priority": 4
+    },
+	 {
+      "url": "https://bisque-hippopotamus-634458.hostingersite.com/rev8/api/",
+      "priority": 5
+    }
+  ]
+}
+
+
+
+

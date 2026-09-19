@@ -1,0 +1,93 @@
+<section id="trade" class="trade-shell">
+   <header class="header trade-header">
+     <div>
+      <div class="logo"><img src="assets/images/zenith-mark.svg" alt="Zenith logo" class="brand-logo"><div class="brand-text">ZENITH</div>
+      </div>
+      <div class="subtitle"> Automated trade cycle </div>
+     </div>
+     <div class="profile"><span class="material-symbols-rounded">monitoring</span></div>
+    </header>
+
+   <style>
+   /* Polished trade-hero stats (scoped to this module) */
+   .trade-hero .trade-hero-stats{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+   /* Left-align stats instead of center */
+   .trade-hero .trade-stat{flex:1 1 100px;background:transparent;padding:6px 8px;border-radius:8px;text-align:left}
+   .trade-hero .trade-stat .label{font-size:11px;color:rgba(255,255,255,0.85);text-transform:uppercase;letter-spacing:0.04em}
+   .trade-hero .trade-stat .stat-value{font-size:16px;font-weight:700;margin-top:4px}
+   .trade-hero .trade-stat .stat-meta{font-size:10px;color:rgba(255,255,255,0.65);margin-top:4px}
+   @media (max-width:420px){.trade-hero .trade-stat{flex:1 1 48%}}
+   </style>
+
+   <div class="card trade-hero app-hero">
+    <div class="trade-hero-head">
+     <div>
+     <div class="label">Trade Engine</div>
+     </div>
+    </div>
+    <div class="trade-hero-foot">
+     <div class="subtitle" id="tradePlanInfo" style="display:none;">Loading trade settings...</div>
+     
+     <div class="trade-hero-stats" role="list" aria-label="Trade summary stats">
+     <div class="trade-stat" role="listitem">
+      <div class="label">Total Traded</div>
+      <div class="stat-value" id="tradedTotal">0</div>
+     </div>
+     <div class="trade-stat" role="listitem">
+      <div class="label">Active Value</div>
+      <div class="stat-value" id="activeTrades">0</div>
+     </div>
+     <div class="trade-stat" role="listitem">
+      <div class="label">Active Trades</div>
+      <div class="stat-value" id="tradeCount">0</div>
+     </div>
+     <div class="trade-stat" role="listitem">
+      <div class="label">Daily Income</div>
+      <div class="stat-value" id="dailyIncome">₱0.00</div>
+     </div>
+     </div>
+
+    </div>
+   </div>
+
+   <div class="card trade-form-card">
+    <div class="section-heading">
+     <h3><span class="material-symbols-rounded"> rocket_launch </span> Activate Trade</h3>
+     <span class="section-pill">Secure launch</span>
+    </div>
+
+    <label class="trade-input-label" for="investment">Trade amount • Min ₱1000</label>
+    <input id="investment" type="number" placeholder="Enter trade amount" oninput="calculatePrimeAutonomous()">
+
+    <div class="trade-metrics">
+     <div class="trade-metric">
+      <div class="label">Daily Income</div>
+      <strong id="daily">₱0.00</strong>
+      <span id="tradeYieldValue">6%</span>
+     </div>
+     <div class="trade-metric">
+      <div class="label">Projected Return</div>
+      <strong id="total">₱0.00</strong>
+      <span id="tradeCycleLabel">25 Day Return</span>
+     </div>
+    </div>
+
+    <div class="trade-toggle-row">
+     <div>
+      <div class="trade-toggle-title">Use available balance</div>
+      <div class="subtitle">Instant activation without checkout</div>
+     </div>
+     <label class="trade-toggle" for="useAvailableBalance">
+      <input id="useAvailableBalance" type="checkbox" onchange="calculatePrimeAutonomous()">
+      <span class="trade-toggle-slider"></span>
+     </label>
+    </div>
+
+    <div class="trade-note" id="tradeBalanceNote">Available balance: ₱0.00</div>
+
+    <button class="btn" onclick="tradeNow()">TRADE NOW</button>
+    <button id="startAI" class="btn" style="display:none;" onclick="startAIInvestment()">START AI TRADING</button>
+   </div>
+
+   <div id="activePlansContainer"></div>
+  </section>

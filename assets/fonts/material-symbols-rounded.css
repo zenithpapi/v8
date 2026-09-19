@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Material Symbols Rounded';
+  font-style: normal;
+  font-weight: 400;
+  src: url('MaterialSymbolsRounded.woff2') format('woff2');
+  font-display: swap;
+}
+
+.material-symbols-rounded,
+.local-icon {
+  font-family: 'Material Symbols Rounded', 'Segoe UI Symbol', 'Apple Symbols', 'Noto Sans Symbols', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

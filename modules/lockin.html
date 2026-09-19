@@ -1,0 +1,119 @@
+<section id="lockin" class="trade-shell lockin-shell">
+  <header class="header trade-header">
+    <div>
+      <div class="logo"><img src="assets/images/zenith-mark.svg" alt="Zenith logo" class="brand-logo"><div class="brand-text">ZENITH <span>LOCK-IN</span></div></div>
+      <div class="subtitle">Secure your lock-in strategy</div>
+    </div>
+    <div class="profile"><span class="material-symbols-rounded">lock</span></div>
+  </header>
+
+  <style>
+  /* Lockin hero stats (scoped to this module) */
+  .lockin-hero .trade-hero-stats{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+  .lockin-hero .trade-stat{flex:1 1 100px;background:transparent;padding:6px 8px;border-radius:8px;text-align:left}
+  .lockin-hero .trade-stat .label{font-size:11px;color:rgba(255,255,255,0.85);text-transform:uppercase;letter-spacing:0.04em}
+  .lockin-hero .trade-stat .stat-value{font-size:16px;font-weight:700;margin-top:4px}
+  .lockin-hero .trade-stat .stat-meta{font-size:10px;color:rgba(255,255,255,0.65);margin-top:4px}
+  @media (max-width:420px){.lockin-hero .trade-stat{flex:1 1 48%}}
+  </style>
+
+  <div class="card trade-hero app-hero lockin-hero">
+    <div class="trade-hero-head">
+      <div>
+        <div class="label">Lockin Engine</div>
+      </div>
+    </div>
+    <div class="trade-hero-foot">
+      <div class="trade-hero-stats" role="list" aria-label="Lockin summary stats">
+       <div class="trade-stat" role="listitem">
+       <div class="label">Total Cash Locked In</div>
+        <div class="stat-value" id="lockinsTotal">0</div>
+       </div>
+       <div class="trade-stat" role="listitem">
+       <div class="label">Active</div>
+        <div class="stat-value" id="activeLockins">0</div>
+       </div>
+       <div class="trade-stat" role="listitem">
+       <div class="label">Active Lockins</div>
+        <div class="stat-value" id="lockinCount">0</div>
+       </div>
+       <div class="trade-stat" role="listitem">
+        <div class="label">Projected</div>
+        <div class="stat-value" id="projectedAmount">₱0.00</div>
+       </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card trade-form-card lockin-card">
+    <div class="section-heading">
+      <h3><span class="material-symbols-rounded"> lock </span> Select Engine</h3>
+      <span class="section-pill">Protected</span>
+    </div>
+
+    <label class="trade-input-label" for="lockinAmount">Lock-in amount • Min ₱500</label>
+    <input id="lockinAmount" type="number" min="500" step="100" placeholder="Enter lock-in amount">
+    <div class="lockin-plan-list">
+      <button class="lockin-plan is-selected" type="button" data-plan="NEXUS" data-percent="20" data-days="10" data-badge="TOP PICK">
+        <div class="lockin-plan-main">
+          <span class="lockin-plan-name">NEXUS</span>
+          <span class="lockin-plan-rate">20% for 10 days</span>
+        </div>
+        <span class="lockin-plan-badge">TOP PICK</span>
+      </button>
+
+      <button class="lockin-plan" type="button" data-plan="ACCELERATOR" data-percent="30" data-days="15" data-badge="BALANCED">
+        <div class="lockin-plan-main">
+          <span class="lockin-plan-name">ACCELERATOR</span>
+          <span class="lockin-plan-rate">30% for 15 days</span>
+        </div>
+        <span class="lockin-plan-badge">BALANCED</span>
+      </button>
+
+      <button class="lockin-plan" type="button" data-plan="INFINITY" data-percent="40" data-days="20" data-badge="MAX YIELD">
+        <div class="lockin-plan-main">
+          <span class="lockin-plan-name">INFINITY</span>
+          <span class="lockin-plan-rate">40% for 20 days</span>
+        </div>
+        <span class="lockin-plan-badge">MAX YIELD</span>
+      </button>
+    </div>
+
+    <div class="lockin-summary">
+      <div class="lockin-summary-item">
+        <div class="label">Selected</div>
+        <strong id="lockinSelectedPlan">NEXUS</strong>
+      </div>
+      <div class="lockin-summary-item">
+        <div class="label">Total To Payout</div>
+        <strong id="lockinProjectedReturn">₱0.00</strong>
+      </div>
+      <div class="lockin-summary-item">
+        <div class="label">Window</div>
+        <strong id="lockinWindow">10 Days</strong>
+      </div>
+      <div class="lockin-summary-item">
+        <div class="label">Security</div>
+        <strong>Protected</strong>
+      </div>
+    </div>
+
+    <div class="trade-toggle-row lockin-toggle-row">
+      <div>
+        <div class="trade-toggle-title">Use available balance</div>
+        <div class="subtitle">Instant activation without checkout</div>
+      </div>
+      <label class="trade-toggle" for="useAvailableBalanceLockin">
+        <input id="useAvailableBalanceLockin" type="checkbox">
+        <span class="trade-toggle-slider"></span>
+      </label>
+    </div>
+
+    <div class="trade-note" id="lockinBalanceNote">Remaining balance: ₱0.00</div>
+
+    <button id="confirmLockinBtn" class="btn" type="button">Confirm Lock-In</button>
+  </div>
+
+  <div id="activePlansContainer"></div>
+</section>

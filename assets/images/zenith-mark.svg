@@ -1,0 +1,24 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="16" y1="12" x2="108" y2="116" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1F33"/>
+      <stop offset="1" stop-color="#143D66"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="32" y1="28" x2="95" y2="96" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FAE7A5"/>
+      <stop offset="0.45" stop-color="#F3D16F"/>
+      <stop offset="1" stop-color="#D7A93B"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(92 24) rotate(117.5) scale(92 92)">
+      <stop stop-color="#F8D77A" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#F8D77A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#bg)"/>
+  <circle cx="94" cy="24" r="52" fill="url(#glow)"/>
+  <path d="M36 35H92L54 63H92V93H36L74 65H36V35Z" fill="url(#gold)"/>
+  <path d="M48 35H94L52 64H92V93H36L74 65H36V35H48Z" fill="none" stroke="#FDF4D9" stroke-opacity="0.42" stroke-width="2.5"/>
+  <path d="M92 26L102 26" stroke="#F7DE8A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M102 26L92 36" stroke="#F7DE8A" stroke-width="5" stroke-linecap="round"/>
+</svg>

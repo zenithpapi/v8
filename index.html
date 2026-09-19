@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Zenith</title>
+
+    <!-- Primary metadata -->
+    <meta name="description" content="Zenith trading platform.">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="theme-color" content="#0b57a4">
+    <meta name="referrer" content="no-referrer">
+
+    <!-- Fonts: local-only for packaged APK/webview usage -->
+    <link rel="stylesheet" href="assets/fonts/inter.css">
+    <link rel="stylesheet" href="assets/fonts/material-symbols-rounded.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/zenith-mark.svg">
+    <link rel="shortcut icon" href="assets/images/zenith-mark.svg">
+    <link rel="apple-touch-icon" href="assets/images/zenith-mark.svg">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/version.css">
+</head>
+
+<body>
+
+
+    <div class="app" id="app">
+        <!-- Modules load here -->
+    </div>
+
+
+
+
+    <nav class="bottom-nav" id="bottomNav" style="display:none;">
+
+
+        <div class="nav active" data-page="home" onclick="openPage('home', this)">
+            <span class="material-symbols-rounded">home</span>
+            <div>Home</div>
+        </div>
+
+
+        <div class="nav" data-page="lockin" onclick="openPage('lockin', this)">
+            <span class="material-symbols-rounded">lock</span>
+            <div>Lockin</div>
+        </div>
+
+
+        <div class="nav" data-page="trade" onclick="openPage('trade', this)">
+            <span class="material-symbols-rounded">monitoring</span>
+            <div>Trade</div>
+        </div>
+
+
+        <div class="nav" data-page="wallet" onclick="openPage('wallet', this)">
+            <span class="material-symbols-rounded">account_balance_wallet</span>
+            <div>Wallet</div>
+        </div>
+
+        <div class="nav" data-page="profile" onclick="openPage('profile', this)">
+            <span class="material-symbols-rounded">person</span>
+            <div>Profile</div>
+        </div>
+
+
+    </nav>
+
+
+
+    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/cache-version.js" defer></script>
+    <script src="assets/js/sw-register.js" defer></script>
+</body>
+</html>
