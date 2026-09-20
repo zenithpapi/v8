@@ -23,48 +23,48 @@ window.addEventListener("orientationchange", syncAppScale);
 syncAppScale();
 
 function applySeasonalTheme(overrideDate = null) {
-  const now = overrideDate instanceof Date ? overrideDate : new Date();
+   const now = overrideDate instanceof Date ? overrideDate : new Date();
 
-  // helper: check inclusive range within same year
-  function inRange(date, startMonth, startDay, endMonth, endDay) {
+   // helper: check inclusive range within same year
+   function inRange(date, startMonth, startDay, endMonth, endDay) {
     const year = date.getFullYear();
     const start = new Date(year, startMonth, startDay);
     const end = new Date(year, endMonth, endDay);
     return date >= start && date <= end;
-  }
+   }
 
-  // Ranges (months are 0-based)
-  // Halloween: Oct 25 (9,25) to Nov 30 (10,30)
-  // Christmas: Nov 24 (10,24) to Dec 31 (11,31)
-  const isChristmas = inRange(now, 10, 24, 11, 31);
-  const isHalloween = inRange(now, 9, 25, 10, 30);
+   // Ranges (months are 0-based)
+   // Halloween: Oct 25 (9,25) to Nov 30 (10,30)
+   // Christmas: Nov 24 (10,24) to Dec 31 (11,31)
+   const isChristmas = inRange(now, 10, 24, 11, 31);
+   const isHalloween = inRange(now, 9, 25, 10, 30);
 
-  // Christmas takes precedence when ranges overlap
-  let season = 'default';
-  if (isChristmas) season = 'christmas';
-  else if (isHalloween) season = 'halloween';
+   // Christmas takes precedence when ranges overlap
+   let season = 'default';
+   if (isChristmas) season = 'christmas';
+   else if (isHalloween) season = 'halloween';
 
-  const backgroundBySeason = {
+   const backgroundBySeason = {
     halloween: "url('assets/images/bg1.jpg')",
     christmas: "url('assets/images/bg2.jpg')",
     default: "url('assets/images/bg3.jpg')"
-  };
+   };
 
-  const selectedBackground = backgroundBySeason[season] || backgroundBySeason.default;
+   const selectedBackground = backgroundBySeason[season] || backgroundBySeason.default;
 
-  document.body.dataset.season = season;
+   document.body.dataset.season = season;
 
-  const gradient = 'linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(245, 245, 245, 0.55) 100%)';
-  const image = selectedBackground;
-  const isMobileWidth = window.innerWidth <= APP_MAX_WIDTH;
+   const gradient = 'linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(245, 245, 245, 0.55) 100%)';
+   const image = selectedBackground;
+   const isMobileWidth = window.innerWidth <= APP_MAX_WIDTH;
 
-  if (isMobileWidth) {
+   if (isMobileWidth) {
     document.body.style.background = `${gradient}, ${image} center center / cover fixed no-repeat`;
-  } else {
-    document.body.style.background = gradient;
-  }
+   } else {
+    document.body.style.background = `${gradient}, ${image} center center / cover fixed no-repeat`;
+   }
 
-  return { season, background: selectedBackground };
+   return { season, background: selectedBackground };
 }
 
 // Debug helpers (date-based). Use in the console:
@@ -73,20 +73,20 @@ function applySeasonalTheme(overrideDate = null) {
 // PrimeDebug.reset(); PrimeDebug.current()
 window.__PRIME_AUTONOMOUS_DEBUG__ = {
   setDate(year, monthIndex, day) {
-    const d = new Date(year, monthIndex, day);
-    return applySeasonalTheme(d);
+   const d = new Date(year, monthIndex, day);
+   return applySeasonalTheme(d);
   },
   setSeason(seasonName) {
-    const s = String(seasonName || '').toLowerCase();
-    if (s === 'halloween') return applySeasonalTheme(new Date(new Date().getFullYear(), 9, 28)); // Oct 28
-    if (s === 'christmas') return applySeasonalTheme(new Date(new Date().getFullYear(), 11, 15)); // Dec 15
-    return applySeasonalTheme(new Date(new Date().getFullYear(), 0, 15)); // Jan 15
+   const s = String(seasonName || '').toLowerCase();
+   if (s === 'halloween') return applySeasonalTheme(new Date(new Date().getFullYear(), 9, 28)); // Oct 28
+   if (s === 'christmas') return applySeasonalTheme(new Date(new Date().getFullYear(), 11, 15)); // Dec 15
+   return applySeasonalTheme(new Date(new Date().getFullYear(), 0, 15)); // Jan 15
   },
   reset() {
-    return applySeasonalTheme();
+   return applySeasonalTheme();
   },
   current() {
-    return document.body.dataset.season || 'default';
+   return document.body.dataset.season || 'default';
   }
 };
 
@@ -1045,6 +1045,15 @@ window.calculatePrimeAutonomous = calculatePrimeAutonomous;
 // AI INVESTMENT
 // ===============================
 
+function getPlanDisplayName(planName) {
+	const planMap = {
+		NEXUS: 'Zillow',
+		ACCELERATOR: 'Zip Co.',
+		INFINITY: 'Zurich'
+	};
+	return planMap[String(planName || '').toUpperCase()] || String(planName || 'NEXUS');
+}
+
 function attachLockinHandlers() {
 	const plans = document.querySelectorAll('.lockin-plan');
 	const amountInput = document.getElementById('lockinAmount');
@@ -1071,7 +1080,7 @@ function attachLockinHandlers() {
 		const total = amount + release;
 		const remainingBalance = availableBalance;
 
-		if (selectedPlanEl) selectedPlanEl.textContent = planName;
+		if (selectedPlanEl) selectedPlanEl.textContent = getPlanDisplayName(planName);
 		if (windowEl) windowEl.textContent = days + ' Days • ' + percent + '%';
 		if (projectedReturnEl) {
 			projectedReturnEl.textContent = '₱' + total.toLocaleString('en-US', {
