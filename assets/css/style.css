@@ -536,15 +536,15 @@ body[data-season="christmas"] {
     
     border-radius:24px;
     
-    background: #ffffff;
+    background: var(--surface);
     
-    border:1px solid rgba(15, 23, 42, 0.08);
+    border:1px solid var(--border);
     
     box-shadow: none;
     
     overflow:hidden;
     
-    color: #111827;
+    color: var(--text);
     
 }
 
@@ -1087,8 +1087,8 @@ body[data-season="halloween"] .lockin-name {
 
 .lockin-plan {
    width: 100%;
-   background: linear-gradient(180deg, #f9fffb 0%, #f1fff7 100%);
-   border: 1px solid rgba(43, 217, 138, 0.18);
+   background: linear-gradient(180deg, var(--surface) 0%, var(--surface2) 100%);
+   border: 1px solid var(--border);
    border-radius: 16px;
    padding: 14px 14px;
    display: flex;
@@ -1103,13 +1103,13 @@ body[data-season="halloween"] .lockin-name {
 .lockin-plan:hover,
 .lockin-plan:focus-visible {
    transform: translateY(-1px);
-   border-color: rgba(43, 217, 138, 0.45);
-   box-shadow: 0 8px 18px rgba(43, 217, 138, 0.08);
+   border-color: rgba(15, 23, 42, 0.14);
+   box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
 }
 
 .lockin-plan.is-selected {
-   border-color: rgba(43, 217, 138, 0.7);
-   background: linear-gradient(180deg, #effff8 0%, #e6fff1 100%);
+   border-color: rgba(15, 23, 42, 0.18);
+   background: linear-gradient(180deg, var(--surface) 0%, rgba(255,255,255,0.9) 100%);
 }
 
 .lockin-plan-main {
@@ -1139,8 +1139,8 @@ body[data-season="halloween"] .lockin-name {
    justify-content: center;
    padding: 6px 8px;
    border-radius: 999px;
-   background: #0f172a;
-   color: #2bd98a;
+   background: var(--primary);
+   color: #000;
    font-size: 0.62rem;
    font-weight: 800;
    letter-spacing: 0.06em;
@@ -1402,6 +1402,13 @@ body[data-season="halloween"] .lockin-name {
 
 .trade-form-card {
     padding: 18px 20px;
+    background: linear-gradient(180deg, var(--surface) 0%, var(--surface2) 100%);
+    border-color: var(--border);
+}
+
+.lockin-card {
+    background: linear-gradient(180deg, var(--surface) 0%, var(--surface2) 100%);
+    border-color: var(--border);
 }
 
 .trade-input-label {
