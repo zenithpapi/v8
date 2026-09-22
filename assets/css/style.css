@@ -1434,7 +1434,7 @@ body[data-season="halloween"] .lockin-name {
 
 .primary-actions {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     position: relative;
     z-index: 2;
@@ -1486,7 +1486,7 @@ body[data-season="halloween"] .lockin-name {
 /* Responsive tweaks */
 @media (max-width: 420px) {
     .primary-actions {
-        grid-template-columns: repeat(4, minmax(0,1fr));
+        grid-template-columns: repeat(3, minmax(0,1fr));
     }
 
     .primary-action { padding: 10px; min-height: 88px }

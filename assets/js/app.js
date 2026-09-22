@@ -734,7 +734,6 @@ function initializePage(page) {
 	if (page === "home") {
 		// loadDashboardData now returns a promise
 		initPromises.push(loadDashboardData());
-		attachHomeAICardHandler();
 	}
 
 	if (page === "profile") {
@@ -756,11 +755,6 @@ function initializePage(page) {
 
 	if (page === "team") {
 		initPromises.push(loadTeamData());
-	}
-
-	if (page === "ai") {
-		startAIAnimation();
-		initPromises.push(loadAIData());
 	}
 
 	// Return a promise that resolves when all init tasks settled (success or failure)
@@ -1051,7 +1045,7 @@ function getPlanDisplayName(planName) {
 		ACCELERATOR: 'Zip Co.',
 		INFINITY: 'Zurich'
 	};
-	return planMap[String(planName || '').toUpperCase()] || String(planName || 'NEXUS');
+	return planMap[String(planName || '').toUpperCase()] || String(planName || 'Zillow');
 }
 
 function attachLockinHandlers() {
@@ -1167,7 +1161,7 @@ function lockInNow() {
 		return requestJson('paymongo.php', {
 			amount: amount,
 			currency: 'PHP',
-			description: 'Zenith Lock-In - ' + planName + ' Engine - ' + formatCurrencyFull(amount),
+			description: 'Zenith Lock-In - ' + getPlanDisplayName(planName) + ' Engine - ' + formatCurrencyFull(amount),
 			payment_method_types: ['qrph'],
 			success_url: window.location.href + '?lockin=success',
 			cancel_url: window.location.href + '?lockin=cancel',
@@ -1176,8 +1170,8 @@ function lockInNow() {
 			test_mode: false,
 			metadata: {
 				user_id: String(user.id),
-				source: 'pat_lockin',
-				plan: planName,
+				source: 'zenith_lockin',
+				plan: getPlanDisplayName(planName),
 				percent: String(percent),
 				days: String(days)
 			}
@@ -2002,26 +1996,6 @@ function copyReferralCode() {
 	navigator.clipboard.writeText(code)
 		.then(() => showToast("Referral code copied"))
 		.catch(() => showToast("Copy failed", "error"));
-}
-
-function attachHomeAICardHandler() {
-	const aiCard = document.getElementById("zenithAiEngineCard") || document.getElementById("primeAutonomousAiEngineCard");
-
-	if (!aiCard) return;
-
-	aiCard.onclick = (event) => {
-		if (event.target.closest("a, button, input, select, textarea")) {
-			return;
-		}
-		openPage("ai", aiCard);
-	};
-
-	aiCard.onkeydown = (event) => {
-		if (event.key === "Enter" || event.key === " ") {
-			event.preventDefault();
-			openPage("ai", aiCard);
-		}
-	};
 }
 
 function loadDashboardData(isProfilePage = false) {
