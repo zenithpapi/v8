@@ -2741,8 +2741,8 @@ function showWithdrawalConfirmation() {
 		return;
 	}
 
-	if (!amount || amount < 200) {
-		showToast("Minimum withdrawal amount is ₱200", "error");
+	if (!amount || amount < 500) {
+		showToast("Minimum withdrawal amount is ₱500", "error");
 		return;
 	}
 
@@ -2901,8 +2901,8 @@ function requestWalletWithdrawal(userId = null, amount = null, mode = null, full
 		return;
 	}
 
-	if (!resolvedAmount || resolvedAmount < 200) {
-		showToast("Minimum withdrawal amount is ₱200", "error");
+	if (!resolvedAmount || resolvedAmount < 500) {
+		showToast("Minimum withdrawal amount is ₱500", "error");
 		return;
 	}
 
